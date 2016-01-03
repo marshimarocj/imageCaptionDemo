@@ -1,0 +1,142 @@
+ul.fp_galleryList{
+	list-style:none;
+	position:relative;
+}
+ul.fp_galleryList li{
+	display:inline;
+	margin:0px 30px;
+	text-transform:uppercase;
+	cursor:pointer;
+	font-size:14px;
+	text-shadow:0px 0px 1px white;
+}
+ul.fp_galleryList li.current{
+	color:#FFED2F;
+}
+ul.fp_galleryList li.current:hover{
+	border:none;
+}
+ul.fp_galleryList li:hover{
+	border-bottom:1px solid #fff;
+}
+#fp_thumbContainer{
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	margin:0px 0 0px 0;
+	height:0px; /*240px to show*/
+	background-color:white;
+	-moz-box-shadow:0px 0px 0px #FFF inset;
+	-webkit-box-shadow:0px 0px 10px #FFF inset;
+	box-shadow:0px 0px 10px #FFF inset;
+	padding:0 3% 0 3%;
+}
+#fp_thumbScroller{
+	position:relative;
+	overflow:hidden;	
+}
+#fp_thumbScroller .images_container{
+	position:relative;
+	float:left;
+	display:none;
+	box-sizing: content-box;
+}
+#fp_thumbScroller .content{
+	float:left;
+	margin-top:17px;
+}
+#fp_thumbScroller .content div{
+	margin:0px 5px;
+	height:100%;
+}
+#fp_thumbScroller img{
+	border:3px solid #fff;
+	height:200px;
+	-moz-box-shadow:1px 1px 3px #000;
+	-webkit-box-shadow:1px 1px 3px #000;
+	box-shadow:1px 1px 3px #000;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+#fp_thumbScroller a{
+	padding:1px;
+}
+.fp_scrollWrapper{
+	display:none;
+	width:100%;
+	padding:15px 45px;
+	height:12px;
+	position:relative;
+	margin:0px auto;
+	background:white;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+.ui-widget-content{
+	height:12px;
+	background-color:#353535;
+	position:relative;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	margin: -4px 0px;
+}
+.ui-slider-horizontal .ui-slider-handle{
+	margin-top:5px;
+	z-index:1;
+	outline:none;
+	cursor:pointer;
+	border:none;
+	width:15px;
+	height:12px;
+	background: #9b9b9b;
+	margin-left:-7px;
+}
+.ui-state-default {
+	background-image:none;
+}
+.fp_prev_thumb,
+.fp_next_thumb{
+	background:transparent url(../images/nav.png) no-repeat top left;
+	position:absolute;
+	top:8px;
+	width:15px;
+	height:17px;
+	cursor:pointer;
+}
+.fp_prev_thumb:hover{
+	background-position:left top;
+}
+.fp_next_thumb:hover{
+	background-position:right top;
+}
+.fp_prev_thumb{
+	left:10px;
+	background-position:left bottom;
+}
+.fp_next_thumb{
+	right:10px;
+	background-position:right bottom;
+}
+
+.ca-nav span {
+    width: 25px;
+    height: 38px;
+    background: transparent url("../images/arrows.png") no-repeat scroll left top;
+    position: absolute;
+    top: 30%;
+    margin-top: 2%;
+    left: 0;
+    text-indent: -9000px;
+    opacity: 0.7;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.ca-nav span.ca-nav-next {
+    background-position: right top;
+    left: auto;
+    right: 0;
+}
