@@ -19,12 +19,12 @@ ul.fp_galleryList li.current:hover{
 ul.fp_galleryList li:hover{
 	border-bottom:1px solid #fff;
 }
-#fp_thumbContainer{
+.photo_list{
 	position:relative;
 	overflow:hidden;
-	width:100%;
-	margin:0px 0 0px 0;
-	height:0px; /*240px to show*/
+	width:800px;
+	margin:20px auto;
+	height:240px; 
 	background-color:white;
 	-moz-box-shadow:0px 0px 0px #FFF inset;
 	-webkit-box-shadow:0px 0px 10px #FFF inset;
@@ -49,15 +49,9 @@ ul.fp_galleryList li:hover{
 	margin:0px 5px;
 	height:100%;
 }
-#fp_thumbScroller img{
-	border:3px solid #fff;
+#iconic img{
+	margin: 0 auto;
 	height:200px;
-	-moz-box-shadow:1px 1px 3px #000;
-	-webkit-box-shadow:1px 1px 3px #000;
-	box-shadow:1px 1px 3px #000;
-	-moz-border-radius:2px;
-	-webkit-border-radius:2px;
-	border-radius:2px;
 }
 #fp_thumbScroller a{
 	padding:1px;
