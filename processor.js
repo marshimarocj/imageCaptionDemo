@@ -10,12 +10,12 @@ function processor(picURL, res){
 		function(callback){
 			downloadPic(picURL, callback);			
 		},
-		function(callback){
+		/*function(callback){
 			processPicHTTP(res, callback);
-		}/*,
+		},*/
 		function(callback){
 			response(res, picURL, callback);
-		}	*/
+		}
 	], 
 	function(err, values){
 		console.log(values);
@@ -89,9 +89,9 @@ function processPicHTTP(res, callback){
 //	var content = path.join(__dirname, 'temp', 'temp.jpg');
 	var content = path.join('/data/Image2SentenceDemo/', 'temp', 'temp.jpg');
 	var options ={
-		host: '222.29.193.82',
-		port: 8001,
-		path: '/path?path=' + content,
+		host: '222.29.195.82',
+		port: 8001, 	
+		path: '222.29.195.82:8001/path?path=' + content,
 		method: 'GET'
 	};
 
@@ -112,15 +112,10 @@ function processPicHTTP(res, callback){
 	req.end();
 }
 
-
 function response(res, data, callback){
 	res.setHeader("Content-Type","text/plain");
     res.setHeader("Access-Control-Allow-Origin","*");
-/*	var date = new Date();
-	picURL += "</br>";
-	picURL += date.toLocaleString();
-	console.log(picURL);
-*/
+
 	res.send(data);	
 	callback(null, 'response');
 }

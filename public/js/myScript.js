@@ -47,8 +47,11 @@
 				data: {url:picUrl},
 				timeout: 60000, // 1 min
 				success:function(msg){
-					document.getElementById("result").innerHTML = msg;
-					clearInterval(B);
+					
+							 $.get("http://222.29.195.82:8001/path?path=" + msg,function(data,status){
+								document.getElementById("result").innerHTML = data;
+								clearInterval(B);
+							  });
 				},
 				error:function(data){
 					alert('error');
