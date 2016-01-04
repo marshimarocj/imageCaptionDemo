@@ -11,7 +11,7 @@ body = ("<html>\n"
 "	<link type=\"text/css\" href=\"css/3.0.3-bootstrap.min.css\" rel=\"stylesheet\">\n"
 "	<link rel=\"stylesheet\" href=\"css/font.css\" type=\"text/css\" media=\"screen\"/>\n"
 "</head>\n"
-"<body >\n"
+"<body style=\"zoom:1.3\">\n"
 "	<div class=\"container-fluid\">\n"
 "		<div class=\"page-header \" style=\"text-align:center; margin-top:1%;\">\n"
 "			<h1 style=\"margin-top:0; font-weight: bold; font-size: 30px; font-family:champagne__limousines-webfont;\">Image Description Generation based on Deep Models</h1>\n"
@@ -25,23 +25,12 @@ body = ("<html>\n"
 "	<!-- Nav tabs -->\n"
 "	<ul class=\"nav nav-tabs\" role=\"tablist\">\n");
 
-data = 	[["Color", \
-			["a woman in a pink dress.", "gFlnDgtBOCi1Zgi2.jpg"], \
-			["a woman with long hair wearing a black dress.", "fa0r14gFcrxp_dkL.jpg"], \
-			["a woman in a white dress holding a baby.", "-RdOvyr6i6B4yFlT.jpg"],\
-			["a man in a black jacket and a black jacket standing in front of a mountain.","-5hmxemuUqlVnYL3.jpg"],\
-			["a red car is parked outside.", "J82sWSWHzYMS0OnJ.jpg"]],\
-		["Animals",\
-			["a bird perched on a branch.","fcvLC-JCXwNE6E6S.jpg"],\
-			["a dog sitting on the ground.","9v1L4_k3VofZU9Pa.jpg"],\
-			["a brown and white cat sitting on a table.","NCascCGdUX5KlQiK.jpg"]
-		]];
 		
 for i in range(len(jsonData.keys())):
 	if i == 0 :
-		body = body + "      <li role=\"presentation\" class=\"active\"><a href=\"#panel-1\" aria-controls=\"panel-1\" role=\"tab\" data-toggle=\"tab\" style=\"font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
+		body = body + "      <li role=\"presentation\" class=\"active\"><a href=\"#panel-1\" aria-controls=\"panel-1\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
 	else :
-		body = body + "      <li role=\"presentation\"><a href=\"#panel-" + str(i+1) + "\" aria-controls=\"panel-"+ str(i+1) + "\" role=\"tab\" data-toggle=\"tab\" style=\"font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
+		body = body + "      <li role=\"presentation\"><a href=\"#panel-" + str(i+1) + "\" aria-controls=\"panel-"+ str(i+1) + "\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
 
 body += ("    </ul>\n"	
 "	<form class=\"form-inline col-md-1\" action=\"Demo.html\" style=\"float:right;margin:-4% 0 0 0\">\n"
@@ -63,7 +52,7 @@ for i in range(len(jsonData.keys())):
 "            <div class=\"thumbnail\">\n"
 "              <img src=\"images/testPic/" + jsonData[jsonData.keys()[i]][j][1] + "\" alt=\"\">\n"
 "              <div class=\"caption\">\n"
-"                <p style=\"font-family:champagne__limousines-webfont; font-size:17px; font-weight:bold;\">" + jsonData[jsonData.keys()[i]][j][0] + "</p>\n"
+"                <p style=\"font-family:champagne__limousines-webfont; font-size:21px; font-weight:bold;\">" + jsonData[jsonData.keys()[i]][j][0] + "</p>\n"
 "              </div>\n"
 "            </div>\n"
 "          </div>\n"
