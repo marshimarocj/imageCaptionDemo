@@ -4,17 +4,14 @@ $.getJSON(dataroot, function(data){
 	thumbsData["thumbs"]=data["thumbs"]; 
 });
 
-function changeThumbsResult(picUrl){
-	var temp = picUrl.split('/');
-	var picName = temp[temp.length-1];
-	$.each(thumbsData.thumbs,function(i,value){
-		if(picName == thumbsData.thumbs[i][1]){
-			document.getElementById("result").innerHTML = thumbsData.thumbs[i][0];
-			return;
-		}
-	});
+function displayImg(imgUrl){
+	document.getElementById("targetPic").src = imgUrl;	
 }
-		
+
+function displayCaption(sentence){
+	document.getElementById("result").innerHTML = sentence;
+}
+
 function changePosition(){
 	var divWidth = $('#picDiv').width();
 	var imageWidth = $('#targetPic').width();
@@ -22,43 +19,6 @@ function changePosition(){
 		return;
 	$("#targetPic").css("marginLeft",(divWidth - imageWidth)/2);
 }
-	
-function loading(){
-	document.getElementById("result").innerHTML += '. ';
-}
-function changePic(){
-	if(!checkJPG())
-		return;
-		
-	var picUrl = $("#picLink").val();
-	document.getElementById("targetPic").src = picUrl;
-	$(".col-md-6").height(document.getElementById("targetPic").height);
-	changePosition();
-	
-	
-	document.getElementById("result").innerHTML = 'Please wait, loading';
-	var B = setInterval('loading()',1000);
-	
-
-	//TODO
-	$.ajax({
-		url: 'http://localhost:6001/getResult',
-		type: 'get',
-		dataType: 'JSON',
-		data: {url:picUrl},
-		timeout: 60000, // 1 min
-		success:function(data){
-			document.getElementById("result").innerHTML = data;
-			clearInterval(B);
-		},
-		error:function(data){
-			alert('error');
-			clearInterval(B);
-		}
-	});
-	
-}
-	
 function checkJPG(){
 	var url = document.getElementById("picLink").value;
 	if(url == ""){
@@ -71,16 +31,60 @@ function checkJPG(){
 	}
 	return true;
 }
-	
 
+function changeThumbsResult(picUrl){
+	var temp = picUrl.split('/');
+	var picName = temp[temp.length-1];
+	$.each(thumbsData.thumbs,function(i,value){
+		if(picName == thumbsData.thumbs[i][1]){
+			displayCaption(thumbsData.thumbs[i][0]);
+			return;
+		}
+	});
+}
+	
 function changePicSlider($obj){
 	var picUrl = $obj.children("div").children("a").children("img").attr("src");
-	document.getElementById("targetPic").src = picUrl;
+	displayImg(picUrl);
 	$(".col-md-6").height(document.getElementById("targetPic").height);	
 	changePosition();
 	changeThumbsResult(picUrl);
 }
-
+	
+function loading(){
+	document.getElementById("result").innerHTML += '. ';
+}
+function changePic(){
+	if(!checkJPG())
+		return;
+		
+	var picUrl = $("#picLink").val();
+	displayImg(picUrl);
+	$(".col-md-6").height(document.getElementById("targetPic").height);
+	changePosition();
+	
+	document.getElementById("result").innerHTML = 'Please wait, loading ';
+	var B = setInterval('loading()',1000);
+	
+	//TODO
+	$.ajax({
+		url: 'http://localhost:6001/getResult',
+		type: 'get',
+		dataType: 'JSON',
+		data: {url:picUrl},
+		timeout: 60000, // 1 min
+		success:function(data){
+			displayCaption(data);
+			clearInterval(B);
+		},
+		error:function(data){
+			alert('error');
+			clearInterval(B);
+		}
+	});
+	
+}
+	
 /***************************About slider******************************/
 
 $(function() {
