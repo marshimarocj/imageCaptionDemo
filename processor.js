@@ -86,7 +86,8 @@ function processPic(res, callback){
 */
 
 function processPicHTTP(res, callback){
-	var content = path.join(__dirname, 'temp', 'temp.jpg');
+//	var content = path.join(__dirname, 'temp', 'temp.jpg');
+	var content = path.join('/data/Image2SentenceDemo/', 'temp', 'temp.jpg');
 	var options ={
 		host: '127.0.0.1',
 		port: 8001,
