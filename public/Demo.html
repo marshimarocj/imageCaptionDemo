@@ -10,29 +10,26 @@
 	<link type="text/css" href="css/jquery.ui.core.css" rel="stylesheet" />
     <link type="text/css" href="css/jquery.ui.slider.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/font.css" type="text/css" media="screen"/>
 </head>
 <body >
 	<div class="container-fluid">
 		<div class="page-header " style="text-align:center; margin-top:1%;">
-			<h1 style="margin-top:0; font-weight: 300; font-size: 30px; font-family: 'Roboto',sans-serif;">Image Description Generation based on Deep Models</h1>
-			<span>
-				<img   src="images/logo.png" style="height:50px; box-sizing: border-box; float:right; margin: -50px 50px 0 0;"/>
-			</span>
+			<h1 style="margin-top:0; font-weight: bold; font-size: 30px; font-family: champagne__limousines-webfont;">Image Description Generation based on Deep Models</h1>
+			<img   src="images/logo.png" style="height:50px; box-sizing: border-box; float:right; margin: -50px 50px 0 0;"/>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row" >
-			<div class="input-group col-md-10" style="margin:0 0 0 20px">
-				<input id="picLink" type="text" class="form-control" placeholder="Search for..." onblur="checkJPG()">
+			<div class="input-group" style="margin:0 0 0 20px">
+				<input id="picLink" type="text" class="form-control" placeholder="Search for..." onblur="checkJPG()"/>
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button" onclick="changePic()">Go!</button>
+					<button class="btn btn-default" type="button" onclick="changePic()" style="margin-right:100px;">Go!</button>
+				</span>
+				<span class="input-group-btn">
+					<a href="More.html"><input type="button" class="btn btn-primary" value="learn more"></input></a>
 				</span>
 			</div>
-			<form class="form-inline col-md-1" action="More.html" style="float:right;margin:-3% 3% 0 0">
-			<div class="form-group">
-				<button id="picButton" class="btn btn-primary" >learn more</button>
-			</div>
-			</form>
 		</div>
 		<div id="fp_thumbContainer">
 			<div class="ca-nav">
@@ -69,8 +66,9 @@
 			<div id="picDiv" class="col-md-6" style="height:auto">
 				<img id="targetPic" src="images/testPic/NCascCGdUX5KlQiK.jpg" class="img-responsive img-thumbnail" alt="Responsive image" style="height:300px;" onload="changePosition();">
 			</div>
-			<div id="resultDiv" class="col-md-6" style="border: 1px solid #CCC; border-radius: 4px;  margin-left:-30px;">
-				<p id="result" style="font-weight: 100; font-size: 20px; font-family: 'Roboto',sans-serif;">a brown and white cat sitting on a table.</p>
+			<div id="resultDiv" class="col-md-6" >
+				<h1  style="font-weight:bold; font-family:champagne__limousines-webfont;">Image Caption</h1>
+				<p id="result" style="font-weight: 500; font-size: 25px; font-family:champagne__limousines-webfont;">a brown and white cat sitting on a table.</p>
 			</div>
 			<script type="text/javascript"> // Set equal height.
 				$( document ).ready(function() {
@@ -85,6 +83,5 @@
 	</div>
 	<script type="text/javascript" src="js/1.7.2-jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="js/about-slider.js"></script>
 </body>
 </html>

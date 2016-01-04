@@ -90,7 +90,7 @@ function processPicHTTP(res, callback){
 	var options ={
 		host: '127.0.0.1',
 		port: 8001,
-		path: '/path?path=' + content,
+		path: '222.29.195.82:8001/path?path=' + content,
 		method: 'GET'
 	};
 

@@ -1,0 +1,10 @@
+
+@font-face { 
+ font-family: 'champagne__limousines-webfont'; 
+ src: url('../font/champagne__limousines-webfont.eot'); 
+ src: local('champagne__limousines-webfont Regular'), 
+        local('champagne__limousines-webfont'), 
+        url('../font/champagne__limousines-webfont.woff') format('woff'), 
+        url('../font/champagne__limousines-webfont.ttf') format('truetype'), 
+        url('../font/champagne__limousines-webfont.svg#champagne__limousines-webfont') format('svg'); 
+}  
