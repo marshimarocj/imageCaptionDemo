@@ -61,7 +61,6 @@
 		function checkJPG(){
 			var url = document.getElementById("picLink").value;
 			if(url == ""){
-				alert("Picture URL cannot be empty.");
 				return false;
 			}
 			parts = url.toLowerCase().split('.');
