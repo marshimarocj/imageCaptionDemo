@@ -40,25 +40,22 @@ function changePic(){
 	var B = setInterval('loading()',1000);
 	
 
-	// $.ajax({
-	// 	url: 'http://localhost:6001/getResult',
-	// 	type: 'post',
-	// 	dataType: 'JSON',
-	// 	data: {url:picUrl},
-	// 	timeout: 60000, // 1 min
-	// 	success:function(msg){
-			
-					 // $.get("http://222.29.195.82:8001/path?path=" + msg,function(data,status){
-					 	$.get("http://222.29.195.82:8001/path?path=/data/Image2SentenceDemo/temp/temp.jpg",function(data,status){
-						document.getElementById("result").innerHTML = data;
-						clearInterval(B);
-					  });
-	// 	},
-	// 	error:function(data){
-	// 		alert('error');
-	// 		clearInterval(B);
-	// 	}
-	// });
+	//TODO
+	$.ajax({
+		url: 'http://localhost:6001/getResult',
+		type: 'get',
+		dataType: 'JSON',
+		data: {url:picUrl},
+		timeout: 60000, // 1 min
+		success:function(data){
+			document.getElementById("result").innerHTML = data;
+			clearInterval(B);
+		},
+		error:function(data){
+			alert('error');
+			clearInterval(B);
+		}
+	});
 	
 }
 	
