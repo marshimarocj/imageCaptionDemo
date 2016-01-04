@@ -10,12 +10,12 @@ function processor(picURL, res){
 		function(callback){
 			downloadPic(picURL, callback);			
 		},
-		function(callback){
+		/*function(callback){
 			processPicHTTP(res, callback);
-		}/*,
+		},*/
 		function(callback){
 			response(res, picURL, callback);
-		}	*/
+		}
 	], 
 	function(err, values){
 		console.log(values);
@@ -112,15 +112,10 @@ function processPicHTTP(res, callback){
 	req.end();
 }
 
-
 function response(res, data, callback){
 	res.setHeader("Content-Type","text/plain");
     res.setHeader("Access-Control-Allow-Origin","*");
-/*	var date = new Date();
-	picURL += "</br>";
-	picURL += date.toLocaleString();
-	console.log(picURL);
-*/
+
 	res.send(data);	
 	callback(null, 'response');
 }
