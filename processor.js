@@ -89,9 +89,9 @@ function processPicHTTP(res, callback){
 //	var content = path.join(__dirname, 'temp', 'temp.jpg');
 	var content = path.join('/data/Image2SentenceDemo/', 'temp', 'temp.jpg');
 	var options ={
-		host: '222.29.193.82',
+		host: '222.29.195.82',
 		port: 8001,
-		path: '/path?path=' + content,
+		path: '222.29.195.82:8001/path?path=' + content,
 		method: 'GET'
 	};
 
