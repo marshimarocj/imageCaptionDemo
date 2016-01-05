@@ -1,10 +1,10 @@
 import json
 
 f = file("data/morePics.json")
-jsonData = json.load(f)		
+jsonData = json.load(f)
 
-body = ("<html>\n"  
-"<head>\n" 
+body = ("<html>\n"
+"<head>\n"
 "	<title>Demo</title>\n"
 "	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n"
 "	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
@@ -25,14 +25,14 @@ body = ("<html>\n"
 "	<!-- Nav tabs -->\n"
 "	<ul class=\"nav nav-tabs\" role=\"tablist\">\n");
 
-		
+
 for i in range(len(jsonData.keys())):
 	if i == 0 :
 		body = body + "      <li role=\"presentation\" class=\"active\"><a href=\"#panel-1\" aria-controls=\"panel-1\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
 	else :
 		body = body + "      <li role=\"presentation\"><a href=\"#panel-" + str(i+1) + "\" aria-controls=\"panel-"+ str(i+1) + "\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
 
-body += ("    </ul>\n"	
+body += ("    </ul>\n"
 "	<form class=\"form-inline col-md-1\" action=\"Demo.html\" style=\"float:right;margin:-4% 0 0 0\">\n"
 "				<div class=\"form-group\">\n"
 "					<button id=\"picButton\" class=\"btn btn-primary\" >Go back</button>\n"
@@ -88,13 +88,13 @@ body += ("</div>\n"
 "				itemSelector: '.item'\n"
 "			});\n"
 "		});\n"
-		
+
 "		//Reinitialize masonry inside each panel after the relative tab link is clicked - \n"
 "		$('a[data-toggle=tab]').each(function () {\n"
 "			var $this = $(this);\n"
 
 "			$this.on('shown.bs.tab', function () {\n"
-			
+
 "				$container.imagesLoaded( function () {\n"
 "					$container.masonry({\n"
 "						columnWidth: '.item',\n"
@@ -104,7 +104,7 @@ body += ("</div>\n"
 
 "			}); //end shown\n"
 "		});  //end each\n"
-	
+
 "	})(jQuery);\n"
 "</script>\n"
 "</html>\n")
@@ -112,5 +112,5 @@ body += ("</div>\n"
 file_object = open('More.html', 'w')
 file_object.write(body)
 file_object.close()
-	  
+
 #print body
