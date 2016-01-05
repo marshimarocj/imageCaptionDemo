@@ -53,7 +53,7 @@ for i in range(len(jsonData)):
 "            <div class=\"thumbnail\">\n"
 "              <img src=\"images/testPic/" + jsonData[i][1][j][1] + "\" alt=\"\">\n"
 "              <div class=\"caption\">\n"
-"                <p style=\"font-family:champagne__limousines-webfont; font-size:21px; font-weight:bold;\">" + jsonData[i][1][j][1] + "</p>\n"
+"                <p style=\"font-family:champagne__limousines-webfont; font-size:21px; font-weight:bold;\">" + jsonData[i][1][j][0] + "</p>\n"
 "              </div>\n"
 "            </div>\n"
 "          </div>\n"
