@@ -1,6 +1,6 @@
 import json
 
-f = file("data/morePics.json")
+f = file("data/morePics.array.json")
 jsonData = json.load(f)		
 
 body = ("<html>\n"  
@@ -26,11 +26,12 @@ body = ("<html>\n"
 "	<ul class=\"nav nav-tabs\" role=\"tablist\">\n");
 
 		
-for i in range(len(jsonData.keys())):
+# for i in range(len(jsonData.keys())):
+for i in range(len(jsonData)):
 	if i == 0 :
-		body = body + "      <li role=\"presentation\" class=\"active\"><a href=\"#panel-1\" aria-controls=\"panel-1\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
+		body = body + "      <li role=\"presentation\" class=\"active\"><a href=\"#panel-1\" aria-controls=\"panel-1\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData[i][0] +"</a></li>\n"
 	else :
-		body = body + "      <li role=\"presentation\"><a href=\"#panel-" + str(i+1) + "\" aria-controls=\"panel-"+ str(i+1) + "\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData.keys()[i] +"</a></li>\n"
+		body = body + "      <li role=\"presentation\"><a href=\"#panel-" + str(i+1) + "\" aria-controls=\"panel-"+ str(i+1) + "\" role=\"tab\" data-toggle=\"tab\" style=\"font-size:20px; font-weight:bold; font-family:champagne__limousines-webfont;\">" + jsonData[i][0] +"</a></li>\n"
 
 body += ("    </ul>\n"	
 "	<form class=\"form-inline col-md-1\" action=\"Demo.html\" style=\"float:right;margin:-4% 0 0 0\">\n"
@@ -41,18 +42,18 @@ body += ("    </ul>\n"
 "    <!-- Tab panes -->\n"
 "	<div class=\"tab-content\">\n")
 
-for i in range(len(jsonData.keys())):
+for i in range(len(jsonData)):
 	if i == 0:
 		body += "      <div role=\"tabpanel\" class=\"tab-pane active\" id=\"panel-" + str(i+1) + "\">\n"
 	else:
 		body += "      <div role=\"tabpanel\" class=\"tab-pane \" id=\"panel-" + str(i+1) + "\">\n"
 	body += "        <div class=\"row masonry-container\">\n"
-	for j in range(0, len(jsonData[jsonData.keys()[i]])):
+	for j in range(len(jsonData[i][1])):
 		body += ("		  <div class=\"col-md-4 col-sm-6 item\">\n"
 "            <div class=\"thumbnail\">\n"
-"              <img src=\"images/testPic/" + jsonData[jsonData.keys()[i]][j][1] + "\" alt=\"\">\n"
+"              <img src=\"images/testPic/" + jsonData[i][1][j][1] + "\" alt=\"\">\n"
 "              <div class=\"caption\">\n"
-"                <p style=\"font-family:champagne__limousines-webfont; font-size:21px; font-weight:bold;\">" + jsonData[jsonData.keys()[i]][j][0] + "</p>\n"
+"                <p style=\"font-family:champagne__limousines-webfont; font-size:21px; font-weight:bold;\">" + jsonData[i][1][j][1] + "</p>\n"
 "              </div>\n"
 "            </div>\n"
 "          </div>\n"
