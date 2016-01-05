@@ -68,14 +68,15 @@ function changePic(){
 	$(".col-md-6").height(document.getElementById("targetPic").height);
 	changePosition();
 	
-	document.getElementById("result").innerHTML = 'Please wait, loading ';
-	var B = setInterval('loading()',1000);
+	// document.getElementById("result").innerHTML = 'Please wait, loading ';
+	// var B = setInterval('loading()',1000);
 	
 	//TODO
-	jQuery.getScript("http://localhost:8080/test/test.jsp?url="+picUrl, 
+	//jQuery.getScript("http://localhost:8080/test/test.jsp?url="+picUrl, 
+	jQuery.getScript("jsp/test.jsp?url="+picUrl, 
         function(){    
 			displayCaption(jsp_result);
-			clearInterval(B);
+			// clearInterval(B);
         });
 }
 	

@@ -63,7 +63,7 @@
 						//process iconic image display
 						var iconicCarousel = new Slide($('#iconic'), d['thumbs'], {},
 						  function(item){
-							var imgUrl = "http://222.29.195.82:6001/images/testPic/" + item[1];
+							var imgUrl = "images/testPic/" + item[1];
 							var sentence = item[0];
 							return '<li class="slide-img"><a href="javascript:void(0);" onclick="changeShow(\''+imgUrl+'\', \''+sentence+'\')" ><img src="' + imgUrl + '"></a></li>';
 						  });
