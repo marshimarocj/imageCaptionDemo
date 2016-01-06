@@ -71,7 +71,7 @@ function changePic(){
 		return;
 		
 	var picUrl = $("#picLink").val();
-	displayImg(picUrl);
+	// displayImg(picUrl);
 	$(".col-md-6").height(document.getElementById("targetPic").height);
 	changePosition();
 	
@@ -86,10 +86,17 @@ function changePic(){
 	jQuery.getScript("jsp/test.jsp?url="+picUrl+"&model="+model+"&search="+search, 
         function(){    
 			if (jsp_download == 0)
-				alert("下载失败！！");
-			displayCaption(jsp_result);
-			// clearInterval(B);
-        });
+			{
+				alert("Download image failed!");
+				displayImg('');
+				displayCaption('');
+			}
+			else
+			{
+				displayImg(picUrl);
+				displayCaption(jsp_result);
+			}
+    });
 }
 	
 /***************************About slider******************************/
