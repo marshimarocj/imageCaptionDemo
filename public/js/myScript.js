@@ -14,6 +14,20 @@ function displayImg(imgUrl){
 }
 
 function displayCaption(sentence){
+	var result = sentence.split("\t");
+	/*
+	sentence = "<dl>";
+	for (var i = 0; i < result.length; i++){
+		sentence += "<dd>"+result[i]+"</dd>";
+	}
+	sentence += "</dl>";
+	document.getElementById("result").innerHTML = sentence;
+	*/
+	sentence = "<ul>";
+	for (var i = 0; i < result.length; i++){
+		sentence += "<li>"+result[i]+"</li>";
+	}
+	sentence += "</ul>";
 	document.getElementById("result").innerHTML = sentence;
 }
 
@@ -68,12 +82,15 @@ function changePic(){
 	$(".col-md-6").height(document.getElementById("targetPic").height);
 	changePosition();
 	
+	var model = $("#model-select option:selected").val();
+	var search = $("#search-select option:selected").val();
+	
 	// document.getElementById("result").innerHTML = 'Please wait, loading ';
 	// var B = setInterval('loading()',1000);
 	
 	//TODO
-	//jQuery.getScript("http://localhost:8080/test/test.jsp?url="+picUrl, 
-	jQuery.getScript("jsp/test.jsp?url="+picUrl, 
+	//jQuery.getScript("http://localhost:8080/test/test.jsp?url="+picUrl+"&model="+model+"&search="+search, 
+	jQuery.getScript("jsp/test.jsp?url="+picUrl+"&model="+model+"&search="+search, 
         function(){    
 			displayCaption(jsp_result);
 			// clearInterval(B);

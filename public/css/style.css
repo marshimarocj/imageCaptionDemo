@@ -135,3 +135,17 @@ ul.fp_galleryList li:hover{
     right: 0;
 }
 
+/* demo.html select */
+.select-row{
+	width:500px;
+	margin:20px auto;
+}
+
+.select-row span{
+	margin-left: 50px;
+}
+
+.form-control{
+	display: inline;
+	width: 100px;
+}
