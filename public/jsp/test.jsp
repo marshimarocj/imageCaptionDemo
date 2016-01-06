@@ -8,6 +8,7 @@ String picurl = (String) request.getParameter("url");
 String model = (String) request.getParameter("model");
 String search = (String) request.getParameter("search");
 String result = "";
+int downloadflag = 0;
 if (picurl != null){
 	MyGet myget = new MyGet();
 	
@@ -20,10 +21,15 @@ if (picurl != null){
 	result = myget.get(url);
 	//result = url+"\t"+model+"\t"+search;
 	
-	DownloadImage download = new DownloadImage();
-	//download.download(picurl, "test.jpg", "C:\\Users\\THINK\\Desktop\\");
-	download.download(picurl, "temp.jpg", "/home/qjin/data/Image2SentenceDemo/temp/");
+	try{
+		DownloadImage download = new DownloadImage();
+		//download.download(picurl, "test.jpg", "C:\\Users\\THINK\\Desktop\\");
+		download.download(picurl, "temp.jpg", "/home/qjin/data/Image2SentenceDemo/temp/");
+		downloadflag = 1;
+	}catch (Exception e){
+		downloadflag = 0;
+	}
 }
 
-out.println("var jsp_result=\'"+result+"\'");
+out.println("var jsp_result=\'"+result+"\'; var jsp_download="+downloadflag+";");
 %>
